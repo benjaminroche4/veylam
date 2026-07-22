@@ -1,0 +1,7 @@
+framework:
+    messenger:
+        transports:
+            # In tests, messages stay in memory so they can be asserted
+            async: 'in-memory://'
+            failed: 'in-memory://'
+            sync: 'in-memory://'

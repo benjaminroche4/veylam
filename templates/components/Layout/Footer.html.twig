@@ -1,0 +1,11 @@
+{# Public site footer: copyright (legal links will be added with the legal pages) #}
+<footer class="border-t border-neutral-200">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
+        <a href="{{ path('app_home') }}" class="font-serif text-lg font-semibold text-neutral-900 transition-colors duration-200 hover:text-neutral-500">
+            {{ 'layout.brand'|trans }}
+        </a>
+        <p class="text-sm text-neutral-500">
+            &copy; {{ 'now'|date('Y') }} {{ 'layout.brand'|trans }}. {{ 'layout.footer.rights'|trans }}
+        </p>
+    </div>
+</footer>

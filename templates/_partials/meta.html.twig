@@ -1,0 +1,12 @@
+{# Technical partial: Open Graph + Twitter cards. Receives meta_* vars from public/base.html.twig #}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ 'layout.brand'|trans }}">
+<meta property="og:title" content="{{ meta_title|trim }}">
+<meta property="og:description" content="{{ meta_description|trim }}">
+<meta property="og:url" content="{{ meta_url|trim }}">
+{% if meta_og_image|trim is not empty %}
+    <meta property="og:image" content="{{ meta_og_image|trim }}">
+{% endif %}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ meta_title|trim }}">
+<meta name="twitter:description" content="{{ meta_description|trim }}">

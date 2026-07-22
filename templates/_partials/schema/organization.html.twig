@@ -1,0 +1,21 @@
+{# Technical partial: JSON-LD graph shared by every public page #}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "{{ url('app_home') }}#organization",
+            "name": "{{ 'layout.brand'|trans }}",
+            "url": "{{ url('app_home') }}"
+        },
+        {
+            "@type": "WebSite",
+            "@id": "{{ url('app_home') }}#website",
+            "name": "{{ 'layout.brand'|trans }}",
+            "url": "{{ url('app_home') }}",
+            "publisher": { "@id": "{{ url('app_home') }}#organization" }
+        }
+    ]
+}
+</script>

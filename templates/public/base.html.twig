@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full antialiased">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{% block title %}{{ 'meta.default.title'|trans }}{% endblock %}</title>
+        <meta name="description" content="{% block description %}{{ 'meta.default.description'|trans }}{% endblock %}">
+        {% block meta_robots %}{% endblock %}
+        <link rel="canonical" href="{% block url %}{{ url('app_home') }}{% endblock %}">
+
+        {{ include('_partials/meta.html.twig', {
+            meta_title: block('title'),
+            meta_description: block('description'),
+            meta_url: block('url'),
+            meta_og_image: block('og_image') is defined ? block('og_image') : '',
+        }) }}
+
+        {% block schema_page %}
+            {{ include('_partials/schema/organization.html.twig') }}
+        {% endblock %}
+
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><rect width=%22128%22 height=%22128%22 rx=%2224%22 fill=%22%23171717%22/><text x=%2264%22 y=%2288%22 font-size=%2272%22 font-family=%22Georgia,serif%22 fill=%22%23fff%22 text-anchor=%22middle%22>V</text></svg>">
+
+        {% block stylesheets %}{% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body class="flex min-h-full flex-col bg-white text-neutral-900">
+        <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-neutral-900 focus:px-4 focus:py-2 focus:text-white">
+            {{ 'layout.skip_link'|trans }}
+        </a>
+
+        <twig:Layout:Header />
+
+        <main id="main" class="flex-1">
+            {% block body %}{% endblock %}
+        </main>
+
+        <twig:Layout:Footer />
+    </body>
+</html>

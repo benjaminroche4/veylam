@@ -1,0 +1,34 @@
+meta:
+    default:
+        title: 'Veylam, a holding built for the long term'
+        description: 'Veylam is a holding company that builds and backs durable businesses, with patient capital and a long-term view.'
+
+layout:
+    brand: Veylam
+    skip_link: 'Skip to content'
+    header:
+        nav_label: 'Main navigation'
+        home: Home
+    footer:
+        rights: 'All rights reserved.'
+
+home:
+    meta:
+        title: 'Veylam, a holding built for the long term'
+        description: 'Veylam builds and backs durable businesses with patient capital, hands-on operators and a long-term view. Discover the group and get in touch.'
+    hero:
+        eyebrow: 'Holding company'
+        title: 'Durable businesses, built to last'
+        subtitle: 'Veylam brings together a family of companies under one roof. We invest patient capital, back strong operators and think in decades, not quarters.'
+    pillars:
+        title: 'What we stand for'
+        items:
+            longterm:
+                title: 'Long-term ownership'
+                text: 'We hold our companies indefinitely. No exit timelines, no pressure to sell: just steady, compounding growth.'
+            operators:
+                title: 'Backing operators'
+                text: 'We trust the people who run our businesses. Each company keeps its identity, its team and its way of working.'
+            discipline:
+                title: 'Financial discipline'
+                text: 'We grow with prudence, invest with focus and keep our structure simple, so every company stands on solid ground.'
