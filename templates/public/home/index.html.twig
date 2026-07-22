@@ -4,36 +4,14 @@
 {% block description %}{{ 'home.meta.description'|trans }}{% endblock %}
 {% block url %}{{ url('app_home') }}{% endblock %}
 
-{% block body %}
-    <section class="mx-auto max-w-6xl px-6 pb-24 pt-28 sm:pt-36">
-        <p class="text-sm font-medium uppercase tracking-widest text-neutral-500">
-            {{ 'home.hero.eyebrow'|trans }}
-        </p>
-        <h1 class="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-tight text-neutral-900 sm:text-6xl">
-            {{ 'home.hero.title'|trans }}
-        </h1>
-        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-neutral-600">
-            {{ 'home.hero.subtitle'|trans }}
-        </p>
-    </section>
+{# Fullscreen Three.js scene only: no header, no footer, no visible text #}
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
 
-    <section class="border-t border-neutral-200 bg-neutral-50" aria-labelledby="pillars-title">
-        <div class="mx-auto max-w-6xl px-6 py-20">
-            <h2 id="pillars-title" class="font-serif text-2xl font-semibold text-neutral-900 sm:text-3xl">
-                {{ 'home.pillars.title'|trans }}
-            </h2>
-            <div class="mt-10 grid gap-10 sm:grid-cols-3">
-                {% for pillar in ['longterm', 'operators', 'discipline'] %}
-                    <div>
-                        <h3 class="text-base font-semibold text-neutral-900">
-                            {{ ('home.pillars.items.' ~ pillar ~ '.title')|trans }}
-                        </h3>
-                        <p class="mt-3 text-sm leading-relaxed text-neutral-600">
-                            {{ ('home.pillars.items.' ~ pillar ~ '.text')|trans }}
-                        </p>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
+{% block body %}
+    <section class="relative flex flex-1 overflow-hidden bg-neutral-950">
+        <twig:Section:ThreeBackground />
+
+        <h1 class="sr-only">{{ 'home.hero.title'|trans }}</h1>
     </section>
 {% endblock %}

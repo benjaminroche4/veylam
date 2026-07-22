@@ -9,11 +9,12 @@ final class HomeControllerTest extends WebTestCase
     public function testItRendersTheHomepage(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/');
+        $client->request('GET', '/');
 
         self::assertResponseIsSuccessful();
-        self::assertSelectorExists('h1');
-        self::assertSelectorTextContains('header', 'Veylam');
+        // The homepage is a fullscreen scene: the h1 stays for SEO but is visually hidden
+        self::assertSelectorExists('h1.sr-only');
+        self::assertSelectorExists('[data-controller="three-background"]');
     }
 
     public function testItExposesSeoMetadata(): void

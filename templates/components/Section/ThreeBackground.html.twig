@@ -1,0 +1,5 @@
+{# Fullscreen Three.js particle background (dark). Place as first child of a `relative overflow-hidden`
+   section; the dark gradient underneath is the no-JS / reduced-motion / pre-init fallback. #}
+<div class="absolute inset-0 bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950" data-controller="three-background" aria-hidden="true">
+    <canvas data-three-background-target="canvas" class="h-full w-full opacity-0 transition-opacity duration-1000"></canvas>
+</div>

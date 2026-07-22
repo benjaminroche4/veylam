@@ -33,12 +33,12 @@
             {{ 'layout.skip_link'|trans }}
         </a>
 
-        <twig:Layout:Header />
+        {% block header %}<twig:Layout:Header />{% endblock %}
 
-        <main id="main" class="flex-1">
+        <main id="main" class="flex flex-1 flex-col">
             {% block body %}{% endblock %}
         </main>
 
-        <twig:Layout:Footer />
+        {% block footer %}<twig:Layout:Footer />{% endblock %}
     </body>
 </html>
