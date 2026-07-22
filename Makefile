@@ -10,7 +10,7 @@ warm:
 deploy:
 	echo "→ Pull Git (main)" && git pull --ff-only origin main
 	echo "→ Install dependencies (prod)" && php composer.phar install --no-dev --optimize-autoloader
-	echo "→ Running database migrations" && php bin/console doctrine:migrations:migrate --env=prod --no-interaction
+	echo "→ Running database migrations" && php bin/console doctrine:migrations:migrate --env=prod --no-interaction --allow-no-migration
 	echo "→ Compile AssetMapper" && php bin/console asset-map:compile --env=prod
 	echo "→ Clear cache (prod)" && php bin/console cache:clear --env=prod
 	echo "✓ Cache warmup (prod, compiles all Twig templates ahead of first request)" && php bin/console cache:warmup --env=prod
