@@ -2,10 +2,7 @@
 # Robots.txt - Veylam.eu
 # ================================
 
-# General rules (routes are locale-prefixed: /fr/..., /en/...)
 User-agent: *
 Disallow: /_fragment
-Disallow: /_profiler/
-Disallow: /_wdt/
 
 Sitemap: https://veylam.eu/sitemap.xml

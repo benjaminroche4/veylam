@@ -1,0 +1,123 @@
+{% extends 'public/base.html.twig' %}
+
+{% block title %}{{ 'legal.privacy.meta.title'|trans }}{% endblock %}
+{% block description %}{{ 'legal.privacy.meta.description'|trans }}{% endblock %}
+{% block url %}{{ url('app_privacy_policy') }}{% endblock %}
+
+{% block schema_page %}
+    {{ include('_partials/schema/organization.html.twig', {
+        page_type: 'WebPage',
+        page_url: block('url'),
+        page_title: block('title'),
+        page_description: block('description'),
+    }) }}
+{% endblock %}
+
+{% block body %}
+    <section class="relative flex-1 bg-neutral-950 px-6 py-28">
+        <div class="mx-auto max-w-3xl">
+            <h1 class="text-3xl font-semibold text-white">{{ 'legal.privacy.title'|trans }}</h1>
+            <p class="mt-3 text-sm text-neutral-500">{{ 'legal.privacy.updated'|trans }}</p>
+            <p class="mt-8 leading-7 text-neutral-400">{{ 'legal.privacy.intro'|trans }}</p>
+
+            <div class="mt-12 space-y-12">
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.privacy.collect.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.privacy.collect.intro'|trans }}</p>
+                    <ul class="mt-3 list-disc space-y-2 pl-5 leading-7 text-neutral-400 marker:text-neutral-600">
+                        <li>{{ 'legal.privacy.collect.item_direct'|trans }}</li>
+                        <li>{{ 'legal.privacy.collect.item_automatic'|trans }}</li>
+                    </ul>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.privacy.collect.outro'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.privacy.use.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.privacy.use.intro'|trans }}</p>
+                    <ul class="mt-3 list-disc space-y-2 pl-5 leading-7 text-neutral-400 marker:text-neutral-600">
+                        <li>{{ 'legal.privacy.use.item_provide'|trans }}</li>
+                        <li>{{ 'legal.privacy.use.item_fix'|trans }}</li>
+                        <li>{{ 'legal.privacy.use.item_understand'|trans }}</li>
+                        <li>{{ 'legal.privacy.use.item_support'|trans }}</li>
+                        <li>{{ 'legal.privacy.use.item_legal'|trans }}</li>
+                    </ul>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.privacy.use.outro'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.privacy.third_party.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.privacy.third_party.intro'|trans }}</p>
+                    <ul class="mt-3 list-disc space-y-2 pl-5 leading-7 text-neutral-400 marker:text-neutral-600">
+                        <li>
+                            {{ 'legal.privacy.third_party.item_apple'|trans }}
+                            <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer" target="_blank" class="text-neutral-200 underline underline-offset-4 transition-colors duration-200 hover:text-white">{{ 'legal.privacy.third_party.item_apple_link'|trans }}</a>.
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.privacy.gdpr.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.privacy.gdpr.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.privacy.retention.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.privacy.retention.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.privacy.sharing.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.privacy.sharing.intro'|trans }}</p>
+                    <ul class="mt-3 list-disc space-y-2 pl-5 leading-7 text-neutral-400 marker:text-neutral-600">
+                        <li>{{ 'legal.privacy.sharing.item_providers'|trans }}</li>
+                        <li>{{ 'legal.privacy.sharing.item_law'|trans }}</li>
+                        <li>{{ 'legal.privacy.sharing.item_protect'|trans }}</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.privacy.children.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.privacy.children.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.privacy.security.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.privacy.security.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.privacy.rights.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.privacy.rights.intro'|trans }}</p>
+                    <ul class="mt-3 list-disc space-y-2 pl-5 leading-7 text-neutral-400 marker:text-neutral-600">
+                        <li>{{ 'legal.privacy.rights.item_access'|trans }}</li>
+                        <li>{{ 'legal.privacy.rights.item_correction'|trans }}</li>
+                        <li>{{ 'legal.privacy.rights.item_object'|trans }}</li>
+                        <li>{{ 'legal.privacy.rights.item_portability'|trans }}</li>
+                        <li>{{ 'legal.privacy.rights.item_withdraw'|trans }}</li>
+                        <li>{{ 'legal.privacy.rights.item_complaint'|trans }}</li>
+                    </ul>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.privacy.rights.outro'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.privacy.transfers.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.privacy.transfers.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.privacy.changes.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.privacy.changes.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.privacy.contact.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.privacy.contact.intro'|trans }}</p>
+                    <p class="mt-3 leading-7 text-neutral-400">
+                        {{ 'legal.privacy.contact.company'|trans }}<br>
+                        {{ 'legal.privacy.contact.email'|trans }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

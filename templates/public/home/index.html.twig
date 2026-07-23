@@ -4,14 +4,28 @@
 {% block description %}{{ 'home.meta.description'|trans }}{% endblock %}
 {% block url %}{{ url('app_home') }}{% endblock %}
 
-{# Fullscreen Three.js scene only: no header, no footer, no visible text #}
-{% block header %}{% endblock %}
-{% block footer %}{% endblock %}
+{% block schema_page %}
+    {{ include('_partials/schema/organization.html.twig', {
+        page_type: 'WebPage',
+        page_url: block('url'),
+        page_title: block('title'),
+        page_description: block('description'),
+    }) }}
+{% endblock %}
+
+{# Fullscreen Three.js scene with the floating header and overlay footer #}
+{% block footer %}<twig:Layout:Footer overlay />{% endblock %}
 
 {% block body %}
     <section class="relative flex flex-1 overflow-hidden bg-neutral-950">
         <twig:Section:ThreeBackground />
 
-        <h1 class="sr-only">{{ 'home.hero.title'|trans }}</h1>
+        {# Hero text slightly above center, soft halo echoing the horizon light #}
+        <div class="pointer-events-none absolute inset-0 z-10 flex items-center justify-center px-6 pb-[12vh]">
+            <div class="max-w-2xl text-center select-none">
+                <h1 class="text-4xl font-light tracking-tight text-white [text-shadow:0_0_40px_rgba(185,193,205,0.35)] sm:text-5xl">{{ 'home.hero.title'|trans }}</h1>
+                <p class="mx-auto mt-6 max-w-xl leading-7 text-neutral-500">{{ 'home.hero.subtitle'|trans }}</p>
+            </div>
+        </div>
     </section>
 {% endblock %}

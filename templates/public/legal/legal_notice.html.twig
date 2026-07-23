@@ -1,0 +1,93 @@
+{% extends 'public/base.html.twig' %}
+
+{% block title %}{{ 'legal.notice.meta.title'|trans }}{% endblock %}
+{% block description %}{{ 'legal.notice.meta.description'|trans }}{% endblock %}
+{% block url %}{{ url('app_legal_notice') }}{% endblock %}
+
+{% block schema_page %}
+    {{ include('_partials/schema/organization.html.twig', {
+        page_type: 'WebPage',
+        page_url: block('url'),
+        page_title: block('title'),
+        page_description: block('description'),
+    }) }}
+{% endblock %}
+
+{% block body %}
+    <section class="relative flex-1 bg-neutral-950 px-6 py-28">
+        <div class="mx-auto max-w-3xl">
+            <h1 class="text-3xl font-semibold text-white">{{ 'legal.notice.title'|trans }}</h1>
+            <p class="mt-3 text-sm text-neutral-500">{{ 'legal.notice.updated'|trans }}</p>
+
+            <div class="mt-12 space-y-12">
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.notice.publisher.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.notice.publisher.intro'|trans }}</p>
+                    <p class="mt-3 leading-7 text-neutral-400">
+                        <span class="text-neutral-200">{{ 'legal.notice.publisher.company'|trans }}</span><br>
+                        {{ 'legal.notice.publisher.form'|trans }}<br>
+                        {{ 'legal.notice.publisher.registry'|trans }}<br>
+                        {{ 'legal.notice.publisher.office'|trans }}<br>
+                        {{ 'legal.notice.publisher.email'|trans }}
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.notice.representative.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.notice.representative.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.notice.hosting.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.notice.hosting.intro'|trans }}</p>
+                    <p class="mt-3 leading-7 text-neutral-400">
+                        <span class="text-neutral-200">{{ 'legal.notice.hosting.company'|trans }}</span><br>
+                        {{ 'legal.notice.hosting.address'|trans }}<br>
+                        <a href="https://www.o2switch.fr" rel="noopener noreferrer" target="_blank" class="text-neutral-200 underline underline-offset-4 transition-colors duration-200 hover:text-white">{{ 'legal.notice.hosting.website'|trans }}</a>
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.notice.intellectual_property.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.notice.intellectual_property.body_content'|trans }}</p>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.notice.intellectual_property.body_reproduction'|trans }}</p>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.notice.intellectual_property.body_trademarks'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.notice.liability.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.notice.liability.body_information'|trans }}</p>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.notice.liability.body_damages'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.notice.links.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.notice.links.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.notice.data.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">
+                        {{ 'legal.notice.data.body_start'|trans }}
+                        <a href="{{ path('app_privacy_policy') }}" class="text-neutral-200 underline underline-offset-4 transition-colors duration-200 hover:text-white">{{ 'legal.notice.data.body_link'|trans }}</a>{{ 'legal.notice.data.body_end'|trans }}
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.notice.cookies.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.notice.cookies.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.notice.law.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.notice.law.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'legal.notice.contact.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'legal.notice.contact.body'|trans }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

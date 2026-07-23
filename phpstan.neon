@@ -5,6 +5,9 @@ parameters:
         - tests
     symfony:
         containerXmlPath: var/cache/dev/App_KernelDevDebugContainer.xml
+    doctrine:
+        # Form-backed entities: properties are nullable until validation passes
+        allowNullablePropertyForRequiredField: true
 
 includes:
     - phpstan-baseline.neon

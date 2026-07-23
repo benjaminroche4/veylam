@@ -17,6 +17,7 @@ varying float v_elevation;
 varying float v_halo;
 varying float v_random;
 varying float v_fog;
+varying float v_screenY;
 
 float hash(vec2 p) {
     return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
@@ -58,7 +59,7 @@ void main() {
     // camera (high z) so foreground points never fill the screen
     float proximityFade = 1.0 - smoothstep(0.0, 30.0, pos.z);
     float d = distance(pos.xz, u_mouse);
-    float halo = exp(-d * d * 0.004) * proximityFade;
+    float halo = exp(-d * d * 0.0034) * proximityFade;
     elevation += halo * 1.2;
 
     // Fading memory of the cursor's path
@@ -100,6 +101,7 @@ void main() {
     v_halo = halo + trailGlow * 0.5;
     v_random = a_random;
     v_fog = 1.0 - exp(-0.0009 * mvPosition.z * mvPosition.z);
+    v_screenY = gl_Position.y / gl_Position.w;
 }
 `;
 
@@ -108,11 +110,16 @@ varying float v_elevation;
 varying float v_halo;
 varying float v_random;
 varying float v_fog;
+varying float v_screenY;
 
 void main() {
     // Soft anti-aliased edge: hard-cut sprites shimmer when the terrain moves slowly
     float r = length(gl_PointCoord - 0.5);
     float alpha = 1.0 - smoothstep(0.32, 0.5, r);
+
+    // Points dissolve very slightly at the bottom edge of the screen
+    alpha *= smoothstep(-1.0, -0.84, v_screenY);
+
     if (alpha < 0.01) {
         discard;
     }
@@ -122,7 +129,8 @@ void main() {
     vec3 light = vec3(0.55, 0.58, 0.64);
     vec3 color = mix(dark, light, smoothstep(0.0, 1.0, v_elevation));
     color *= 0.75 + v_random * 0.5;
-    color += v_halo * 0.25;
+    // Cool-white spotlight under the cursor, kept subtle
+    color += v_halo * vec3(0.30, 0.32, 0.37);
 
     // Manual exponential fog toward the background color
     color = mix(color, vec3(0.039), clamp(v_fog, 0.0, 1.0));
@@ -168,7 +176,10 @@ float hash(vec2 p) {
 void main() {
     // Animated film grain + cinematic vignette, drawn over the whole scene
     float grain = hash(gl_FragCoord.xy + fract(u_time) * 100.0);
-    float vignette = smoothstep(0.35, 0.85, distance(v_uv, vec2(0.5)));
+    // Vignette on the sides and top only: no darkening toward the bottom of the frame
+    vec2 offset = v_uv - vec2(0.5);
+    offset.y = max(offset.y, 0.0);
+    float vignette = smoothstep(0.35, 0.85, length(offset));
     float alpha = clamp(vignette * 0.5 + (grain - 0.5) * 0.07, 0.0, 1.0);
     gl_FragColor = vec4(vec3(0.0), alpha);
 }

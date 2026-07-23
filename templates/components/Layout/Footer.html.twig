@@ -1,11 +1,33 @@
-{# Public site footer: copyright (legal links will be added with the legal pages) #}
-<footer class="border-t border-neutral-200">
-    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
-        <a href="{{ path('app_home') }}" class="font-serif text-lg font-semibold text-neutral-900 transition-colors duration-200 hover:text-neutral-500">
-            {{ 'layout.brand'|trans }}
-        </a>
-        <p class="text-sm text-neutral-500">
-            &copy; {{ 'now'|date('Y') }} {{ 'layout.brand'|trans }}. {{ 'layout.footer.rights'|trans }}
-        </p>
+{# Public site footer: copyright + legal links #}
+{# @prop overlay bool Overlay variant pinned to the bottom of fullscreen pages. #}
+{% props overlay = false %}
+<footer class="{{ overlay ? 'absolute inset-x-0 bottom-0 z-20' : 'border-t border-white/10 bg-neutral-950' }}">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 px-6 py-6 text-sm text-neutral-500 sm:flex-row sm:gap-3">
+        <p class="text-center">&copy; {{ 'now'|date('Y') }} {{ 'layout.brand'|trans }}. {{ 'layout.footer.rights'|trans }}</p>
+
+        <nav aria-label="{{ 'layout.footer.nav_label'|trans }}">
+            <ul role="list" class="flex flex-col items-center gap-3 sm:flex-row sm:gap-6">
+                <li>
+                    <a href="{{ path('app_legal_notice') }}" class="transition-colors duration-200 hover:text-neutral-300">
+                        {{ 'layout.footer.legal_notice'|trans }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('app_privacy_policy') }}" class="transition-colors duration-200 hover:text-neutral-300">
+                        {{ 'layout.footer.privacy_policy'|trans }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('app_terms_of_use') }}" class="transition-colors duration-200 hover:text-neutral-300">
+                        {{ 'layout.footer.terms_of_use'|trans }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('app_contact') }}" class="transition-colors duration-200 hover:text-neutral-300">
+                        {{ 'layout.footer.contact'|trans }}
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </footer>

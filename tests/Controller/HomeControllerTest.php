@@ -12,8 +12,7 @@ final class HomeControllerTest extends WebTestCase
         $client->request('GET', '/');
 
         self::assertResponseIsSuccessful();
-        // The homepage is a fullscreen scene: the h1 stays for SEO but is visually hidden
-        self::assertSelectorExists('h1.sr-only');
+        self::assertSelectorTextContains('h1', 'We create unique experiences across the world.');
         self::assertSelectorExists('[data-controller="three-background"]');
     }
 

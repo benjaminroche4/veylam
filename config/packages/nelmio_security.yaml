@@ -1,0 +1,41 @@
+nelmio_security:
+    # Prevents framing of the entire site
+    clickjacking:
+        paths:
+            '^/.*': DENY
+
+    # Disables content type sniffing for script resources
+    content_type:
+        nosniff: true
+
+    referrer_policy:
+        enabled: true
+        policies:
+            - 'no-referrer'
+            - 'strict-origin-when-cross-origin'
+
+    # CSP starts in report-only: nothing is blocked, violations are logged.
+    # Goal before enforcing: drop unsafe-inline from script-src (importmap needs a nonce strategy)
+    csp:
+        enabled: true
+        report_logger_service: logger
+        report:
+            level1_fallback: false
+            browser_adaptive:
+                enabled: false
+            default-src: ['self']
+            script-src: ['self', 'unsafe-inline']
+            style-src: ['self', 'unsafe-inline']
+            img-src: ['self', 'data:']
+            font-src: ['self']
+            connect-src: ['self']
+            frame-ancestors: ['none']
+            base-uri: ['self']
+
+when@prod:
+    nelmio_security:
+        # [o2switch] HSTS in production only, HTTPS is terminated by LiteSpeed
+        forced_ssl:
+            enabled: true
+            hsts_max_age: 31536000
+            hsts_subdomains: true

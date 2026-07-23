@@ -1,4 +1,5 @@
-{# Technical partial: JSON-LD graph shared by every public page #}
+{# Technical partial: JSON-LD graph shared by every public page.
+   Optional vars (page_type, page_url, page_title, page_description) append a page-level node #}
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -7,7 +8,9 @@
             "@type": "Organization",
             "@id": "{{ url('app_home') }}#organization",
             "name": "{{ 'layout.brand'|trans }}",
-            "url": "{{ url('app_home') }}"
+            "url": "{{ url('app_home') }}",
+            "logo": "{{ absolute_url(asset('medias/logo/logo_long_white_gradian.svg')) }}",
+            "email": "contact@veylam.eu"
         },
         {
             "@type": "WebSite",
@@ -15,7 +18,17 @@
             "name": "{{ 'layout.brand'|trans }}",
             "url": "{{ url('app_home') }}",
             "publisher": { "@id": "{{ url('app_home') }}#organization" }
-        }
+        }{% if page_url is defined %},
+        {
+            "@type": "{{ page_type|default('WebPage') }}",
+            "@id": "{{ page_url }}#webpage",
+            "url": "{{ page_url }}",
+            "name": {{ page_title|json_encode|raw }},
+            "description": {{ page_description|json_encode|raw }},
+            "inLanguage": "en",
+            "isPartOf": { "@id": "{{ url('app_home') }}#website" },
+            "about": { "@id": "{{ url('app_home') }}#organization" }
+        }{% endif %}
     ]
 }
 </script>

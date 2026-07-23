@@ -25,7 +25,7 @@ export default class extends Controller {
         this.THREE = THREE;
 
         this.isMobile = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768;
-        this.density = this.isMobile ? 90 : 150;
+        this.density = this.isMobile ? 110 : 150;
 
         this.renderer = new THREE.WebGLRenderer({ canvas: this.canvasTarget, antialias: false });
         this.renderer.setClearColor(0x0a0a0a, 1);
@@ -55,7 +55,8 @@ export default class extends Controller {
         this.smoothedMouse = { x: 0, y: 0 };
         this.lastTrailPoint = { x: 0, y: 0 };
         this.startedAt = performance.now();
-        this.nextAmbientWaveAt = this.startedAt + 12000 + Math.random() * 10000;
+        this.nextAmbientWaveAt = this.startedAt + (this.isMobile ? 4000 : 12000) + Math.random() * 8000;
+        this.lastTiltAt = 0;
         this.lastPointerAt = this.startedAt;
         this.lastClickAt = 0;
         this.visible = true;
@@ -203,6 +204,7 @@ export default class extends Controller {
             }
             this.mouse.x = Math.max(-1, Math.min(1, event.gamma / 30)) * 30;
             this.mouse.y = Math.max(-1, Math.min(1, (event.beta - 45) / 30)) * 25;
+            this.lastTiltAt = performance.now();
         };
         if (this.isMobile && typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission !== 'function') {
             window.addEventListener('deviceorientation', this.onOrientation, { passive: true });
@@ -298,7 +300,7 @@ export default class extends Controller {
         if (!this.renderer) {
             return;
         }
-        const dpr = Math.min(window.devicePixelRatio || 1, this.isMobile ? 1.25 : 1.5);
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
         const width = this.element.clientWidth;
         const height = this.element.clientHeight;
         this.renderer.setPixelRatio(dpr);
@@ -360,6 +362,13 @@ export default class extends Controller {
 
         const elapsed = (now - this.startedAt) / 1000;
 
+        // Mobile has no hover: between touches (and without tilt input) the halo
+        // wanders on its own so the terrain never sits still
+        if (this.isMobile && now - this.lastPointerAt > 2500 && now - this.lastTiltAt > 2500) {
+            this.mouse.x = Math.sin(elapsed * 0.19) * 20 + Math.sin(elapsed * 0.047) * 9;
+            this.mouse.y = Math.cos(elapsed * 0.14) * 14 + Math.sin(elapsed * 0.073) * 7;
+        }
+
         this.smoothedMouse.x += (this.mouse.x - this.smoothedMouse.x) * 0.06;
         this.smoothedMouse.y += (this.mouse.y - this.smoothedMouse.y) * 0.06;
 
@@ -386,7 +395,7 @@ export default class extends Controller {
         // Rare ambient wave crossing the terrain
         if (now >= this.nextAmbientWaveAt) {
             this.#spawnWave((Math.random() - 0.5) * 60, (Math.random() - 0.5) * 50, 0.8);
-            this.nextAmbientWaveAt = now + 15000 + Math.random() * 15000;
+            this.nextAmbientWaveAt = now + (this.isMobile ? 8000 + Math.random() * 8000 : 15000 + Math.random() * 15000);
         }
 
         // Intro: terrain rises while the camera eases in (~2.5s, ease-out cubic)

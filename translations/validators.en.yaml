@@ -1,0 +1,12 @@
+contact:
+    name:
+        not_blank: 'Please enter your name.'
+        max_length: 'Your name cannot be longer than {{ limit }} characters.'
+    email:
+        not_blank: 'Please enter your email address.'
+        invalid: 'Please enter a valid email address.'
+        max_length: 'Your email address cannot be longer than {{ limit }} characters.'
+    message:
+        not_blank: 'Please enter a message.'
+        min_length: 'Your message must be at least {{ limit }} characters long.'
+        max_length: 'Your message cannot be longer than {{ limit }} characters.'

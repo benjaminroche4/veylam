@@ -1,7 +1,7 @@
 meta:
     default:
-        title: 'Veylam, a holding built for the long term'
-        description: 'Veylam is a holding company that builds and backs durable businesses, with patient capital and a long-term view.'
+        title: 'Veylam, unique experiences across the world'
+        description: 'Veylam leads with one standard: premium. We craft products, services and experiences designed to be remembered, across every company we build.'
 
 layout:
     brand: Veylam
@@ -9,14 +9,261 @@ layout:
     header:
         nav_label: 'Main navigation'
         home: Home
+        logo_alt: Veylam
+        contact: 'Contact us'
     footer:
         rights: 'All rights reserved.'
+        nav_label: 'Footer navigation'
+        legal_notice: 'Legal notice'
+        privacy_policy: 'Privacy policy'
+        terms_of_use: 'Terms of use'
+        contact: Contact
+
+contact:
+    meta:
+        title: 'Contact Veylam, get in touch with the group'
+        description: 'Reach out to Veylam. Tell us about your company, a partnership or any question about the group and we will get back to you shortly.'
+    hero:
+        title: 'Get in touch'
+        subtitle: 'Tell us about your company, a partnership or any question about the group. We usually reply within two business days.'
+    form:
+        name: 'Your name'
+        email: 'Your email'
+        message: 'Your message'
+        website: 'Leave this field empty'
+        submit: 'Send message'
+        rate_limited: 'Too many messages were sent from your connection. Please wait a minute and try again.'
+    success:
+        title: 'Message sent'
+        body: 'Thank you for reaching out. We have received your message and will get back to you shortly.'
+    email:
+        admin:
+            subject: 'New contact message on veylam.eu'
+            title: 'New contact message'
+            from_name: 'Name:'
+            from_email: 'Email:'
+            message: 'Message:'
+        client:
+            subject: 'We received your message'
+            title: 'Thank you, %name%'
+            body: 'We have received your message and will get back to you shortly.'
+            signature: 'The Veylam team'
+
+error:
+    back_home: 'Back to homepage'
+    '403':
+        title: 'Access denied'
+        message: 'You do not have permission to access this page.'
+    '404':
+        title: 'Page not found'
+        message: 'The page you are looking for does not exist or has been moved.'
+    '500':
+        title: 'Something went wrong'
+        message: 'An unexpected error occurred on our side. Please try again in a moment.'
+    generic:
+        title: 'Something went wrong'
+        message: 'An unexpected error occurred. Please try again in a moment.'
+
+legal:
+    notice:
+        meta:
+            title: 'Legal notice, Veylam'
+            description: 'Legal notice of Veylam OÜ: publisher and legal representative, hosting provider, intellectual property, liability, governing law and contact details.'
+        title: 'Legal notice'
+        updated: 'Last updated: July 23, 2026'
+        publisher:
+            title: '1. Publisher'
+            intro: 'This website and the mobile applications published under this name (together, the "Services") are operated by:'
+            company: 'Veylam OÜ'
+            form: 'Private limited company (osaühing) incorporated under the laws of the Republic of Estonia'
+            registry: 'Registry code: 17548179'
+            office: 'Registered office: Tartu mnt 67/1-13b, Kesklinna linnaosa, Tallinn, Estonia'
+            email: 'Email: contact@veylam.eu'
+        representative:
+            title: '2. Legal Representative'
+            body: 'Veylam OÜ is represented by Benjamin R., Member of the Management Board, who is also the person responsible for the content published on the Services (publication director).'
+        hosting:
+            title: '3. Hosting Provider'
+            intro: 'The Services are hosted by:'
+            company: 'o2switch'
+            address: 'Chemin des Pardiaux, 63000 Clermont-Ferrand, France'
+            website: 'www.o2switch.fr'
+        intellectual_property:
+            title: '4. Intellectual Property'
+            body_content: 'All content available on the Services (including but not limited to texts, graphics, logos, icons, images, software, application code, and their overall structure) is the exclusive property of Veylam OÜ or its licensors, and is protected by applicable intellectual property laws and international treaties.'
+            body_reproduction: 'Any reproduction, representation, modification, publication, adaptation, or exploitation of all or part of the Services, by any means or process whatsoever, is prohibited without the prior written authorization of Veylam OÜ. Any unauthorized use constitutes an infringement and may give rise to civil and/or criminal proceedings.'
+            body_trademarks: 'The trademarks, trade names, and logos appearing on the Services are the property of their respective owners.'
+        liability:
+            title: '5. Limitation of Liability'
+            body_information: 'Veylam OÜ strives to keep the information published on the Services accurate and up to date, but does not warrant its completeness, accuracy, or timeliness. The information is provided "as is", for general information purposes only, and may be modified at any time without notice.'
+            body_damages: 'Veylam OÜ shall not be held liable for any direct or indirect damage resulting from access to or use of the Services, including any loss of data, service interruption, or damage caused by malicious software, except in cases of gross negligence or willful misconduct, or where liability cannot be excluded under applicable law.'
+        links:
+            title: '6. External Links'
+            body: 'The Services may contain links to third-party websites or services. These links are provided for convenience only. Veylam OÜ has no control over the content of these third-party sites and accepts no responsibility for their content, availability, or privacy practices.'
+        data:
+            title: '7. Personal Data'
+            body_start: 'Information about how we collect and process personal data is set out in our'
+            body_link: 'Privacy Policy'
+            body_end: '. For any question or request regarding your personal data, you can contact us at contact@veylam.eu.'
+        cookies:
+            title: '8. Cookies'
+            body: 'Where the Services use cookies or similar technologies, you will be informed and, where required by law, asked for your consent. You can configure your browser or device settings to refuse cookies at any time.'
+        law:
+            title: '9. Governing Law and Jurisdiction'
+            body: 'These legal notices and the use of the Services are governed by the laws of the Republic of Estonia, without prejudice to any mandatory consumer protection provisions applicable in your country of residence. Any dispute relating to the Services that cannot be resolved amicably shall be submitted to the competent courts of Tallinn, Estonia, unless mandatory law provides otherwise.'
+        contact:
+            title: '10. Contact'
+            body: 'For any question regarding these legal notices, please contact us at contact@veylam.eu.'
+    privacy:
+        meta:
+            title: 'Privacy policy, Veylam'
+            description: 'Privacy policy for the mobile applications published by Veylam OÜ on the Apple App Store: what data we collect, how we use it and your rights.'
+        title: 'Privacy policy'
+        updated: 'Last updated: July 23, 2026'
+        intro: 'This Privacy Policy applies to all mobile applications (the "Apps") published by Veylam OÜ ("we", "us", or "our") on the Apple App Store. We are committed to protecting your privacy and handling your data transparently. By using our Apps, you agree to the practices described in this policy.'
+        collect:
+            title: '1. Information We Collect'
+            intro: 'We aim to collect as little personal data as possible. Depending on the App and the features you use, we may collect:'
+            item_direct: 'Information you provide directly, such as a username, email address, or content you create within the App (only if the App offers such features).'
+            item_automatic: 'Automatically collected information, such as device type, operating system version, language, crash reports, and anonymized usage statistics, used solely to improve the stability and performance of our Apps.'
+            outro: 'We do not collect precise location data, contacts, photos, or any other sensitive information unless explicitly requested within the App and authorized by you through iOS permission prompts.'
+        use:
+            title: '2. How We Use Your Information'
+            intro: 'We use the information we collect to:'
+            item_provide: 'Provide, operate, and maintain the Apps;'
+            item_fix: 'Fix bugs, analyze crashes, and improve performance;'
+            item_understand: 'Understand aggregate usage patterns to improve features;'
+            item_support: 'Respond to your support requests;'
+            item_legal: 'Comply with legal obligations.'
+            outro: 'We do not sell, rent, or trade your personal data to third parties.'
+        third_party:
+            title: '3. Third-Party Services'
+            intro: 'Our Apps may use third-party services that collect information as described in their own privacy policies, including:'
+            item_apple: 'Apple (App Store, in-app purchases, Game Center, iCloud): see the'
+            item_apple_link: 'Apple Privacy Policy'
+        gdpr:
+            title: '4. Legal Basis for Processing (GDPR)'
+            body: "If you are located in the European Economic Area, we process your personal data on the following legal bases: your consent, the performance of a contract (providing the App's features), our legitimate interests (improving and securing our Apps), and compliance with legal obligations."
+        retention:
+            title: '5. Data Retention'
+            body: 'We retain personal data only for as long as necessary to fulfill the purposes described in this policy, or as required by law. Anonymized and aggregated data may be retained for statistical purposes.'
+        sharing:
+            title: '6. Data Sharing'
+            intro: 'We may share information only in the following limited circumstances:'
+            item_providers: 'With service providers who assist us in operating the Apps, under strict confidentiality obligations;'
+            item_law: 'When required by law, regulation, or legal process;'
+            item_protect: 'To protect the rights, safety, or property of our users or the public.'
+        children:
+            title: "7. Children's Privacy"
+            body: 'Our Apps are not directed at children under the age of 13 (or the minimum age required in your jurisdiction). We do not knowingly collect personal data from children. If you believe a child has provided us with personal data, please contact us and we will delete it promptly.'
+        security:
+            title: '8. Security'
+            body: 'We implement reasonable technical and organizational measures to protect your data against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission or storage is completely secure, and we cannot guarantee absolute security.'
+        rights:
+            title: '9. Your Rights'
+            intro: 'Depending on your jurisdiction, you may have the right to:'
+            item_access: 'Access the personal data we hold about you;'
+            item_correction: 'Request correction or deletion of your data;'
+            item_object: 'Object to or restrict the processing of your data;'
+            item_portability: 'Request portability of your data;'
+            item_withdraw: 'Withdraw your consent at any time;'
+            item_complaint: 'Lodge a complaint with a data protection authority.'
+            outro: 'To exercise any of these rights, contact us at the address below.'
+        transfers:
+            title: '10. International Data Transfers'
+            body: 'Your information may be processed in countries other than your own. Where required, we ensure appropriate safeguards are in place in accordance with applicable data protection laws.'
+        changes:
+            title: '11. Changes to This Policy'
+            body: 'We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last updated" date. We encourage you to review this policy periodically.'
+        contact:
+            title: '12. Contact Us'
+            intro: 'If you have any questions about this Privacy Policy or our data practices, you can contact us at:'
+            company: 'Veylam OÜ'
+            email: 'Email: contact@veylam.eu'
+
+terms:
+    meta:
+        title: 'Terms of use, Veylam'
+        description: 'Terms of Use for the mobile applications published by Veylam OÜ on the Apple App Store: license, purchases, acceptable use and liability.'
+    title: 'Terms of Use'
+    updated: 'Last updated: July 23, 2026'
+    acceptance:
+        title: '1. Acceptance of These Terms'
+        body: 'These Terms of Use (the "Terms") govern your access to and use of the mobile applications published by Veylam OÜ ("we", "us", or "our") on the Apple App Store, as well as any related websites and services (together, the "Services"). By downloading, installing, or using any of our applications, you agree to be bound by these Terms. If you do not agree, do not use the Services.'
+    about:
+        title: '2. About Us'
+        body: 'Veylam OÜ is a private limited company (osaühing) incorporated under the laws of the Republic of Estonia, registry code 17548179, with its registered office at Tartu mnt 67/1-13b, Kesklinna linnaosa, Tallinn, Estonia. You can contact us at contact@veylam.eu.'
+    license:
+        title: '3. License'
+        body_grant: 'Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to download and use our applications on Apple-branded devices that you own or control, for your personal, non-commercial use, in accordance with the Usage Rules set forth in the Apple Media Services Terms and Conditions.'
+        body_restrictions: 'You may not copy, modify, distribute, sell, rent, lease, sublicense, reverse engineer, decompile, or attempt to extract the source code of the Services, except to the extent permitted by applicable law.'
+    accounts:
+        title: '4. User Accounts'
+        body_start: 'Some applications may allow or require you to create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activity under your account. You must provide accurate information and keep it up to date. You may delete your account at any time from within the application or by contacting us at contact@veylam.eu, in which case your personal data will be handled as described in our'
+        body_link: 'Privacy Policy'
+        body_end: '.'
+    purchases:
+        title: '5. In-App Purchases and Subscriptions'
+        intro: "Some applications may offer in-app purchases or auto-renewable subscriptions, processed exclusively through Apple's in-app purchase system. Where subscriptions are offered:"
+        item_payment: 'Payment is charged to your Apple Account at confirmation of purchase;'
+        item_renewal: 'Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period;'
+        item_manage: 'You can manage or cancel your subscription at any time in your device Settings > Apple Account > Subscriptions;'
+        item_trial: 'Any unused portion of a free trial is forfeited when you purchase a subscription;'
+        item_refunds: "Refunds are handled by Apple in accordance with Apple's refund policy."
+        outro: 'Prices and features are displayed in the application before any purchase.'
+    content:
+        title: '6. User Content'
+        body: 'If an application allows you to create, upload, or share content, you retain ownership of your content but grant us a non-exclusive, worldwide, royalty-free license to host, store, and display it solely for the purpose of operating the Services. You are responsible for your content and warrant that it does not infringe the rights of any third party or violate any applicable law.'
+    acceptable_use:
+        title: '7. Acceptable Use'
+        intro: 'You agree not to use the Services to:'
+        item_law: 'Violate any applicable law or regulation;'
+        item_infringe: 'Infringe the intellectual property or privacy rights of others;'
+        item_malware: 'Transmit malware, spam, or any harmful or disruptive content;'
+        item_interfere: 'Interfere with, disrupt, or attempt to gain unauthorized access to the Services or related systems;'
+        item_fraud: 'Use the Services for any fraudulent, abusive, or unlawful purpose.'
+    intellectual_property:
+        title: '8. Intellectual Property'
+        body: 'The Services, including all software, designs, text, graphics, logos, and other content (excluding user content), are the exclusive property of Veylam OÜ or its licensors and are protected by intellectual property laws. Nothing in these Terms transfers any ownership rights to you.'
+    third_party:
+        title: '9. Third-Party Services'
+        body: 'The Services may rely on or link to third-party services (including Apple services). Your use of such third-party services is governed by their own terms and privacy policies, and we are not responsible for them. When using any application, you must also comply with any applicable third-party terms of agreement (for example, your wireless data service agreement).'
+    warranties:
+        title: '10. Disclaimer of Warranties'
+        body: 'The Services are provided "as is" and "as available", without warranties of any kind, whether express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that the Services will be uninterrupted, error-free, or secure. Nothing in this section limits any warranty rights you may have under mandatory applicable law.'
+    liability:
+        title: '11. Limitation of Liability'
+        body: 'To the maximum extent permitted by applicable law, Veylam OÜ shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits, data, or goodwill, arising out of or in connection with your use of the Services. Our total aggregate liability shall not exceed the amount you paid us, if any, in the twelve (12) months preceding the event giving rise to the claim. Nothing in these Terms excludes or limits liability that cannot be excluded or limited under applicable law, including liability for gross negligence or willful misconduct.'
+    apple:
+        title: '12. Apple-Specific Terms'
+        intro: 'The following applies to any application downloaded from the Apple App Store:'
+        item_parties: 'These Terms are concluded between you and Veylam OÜ only, not with Apple Inc. ("Apple"). Veylam OÜ, not Apple, is solely responsible for the applications and their content;'
+        item_maintenance: 'Apple has no obligation to furnish any maintenance or support services with respect to the applications;'
+        item_warranty: 'In the event of any failure of an application to conform to an applicable warranty, you may notify Apple, and Apple will refund the purchase price (if any) of the application. To the maximum extent permitted by law, Apple has no other warranty obligation whatsoever with respect to the applications;'
+        item_claims: 'Apple is not responsible for addressing any claims by you or any third party relating to the applications, including product liability claims, claims that an application fails to conform to legal or regulatory requirements, and claims arising under consumer protection or similar legislation;'
+        item_ip: "In the event of any third-party claim that an application or your possession and use of it infringes that third party's intellectual property rights, Veylam OÜ, not Apple, is responsible for the investigation, defense, settlement, and discharge of such claim;"
+        item_embargo: 'You represent and warrant that you are not located in a country subject to a U.S. Government embargo or designated as a "terrorist supporting" country, and that you are not listed on any U.S. Government list of prohibited or restricted parties;'
+        item_beneficiary: "Apple and Apple's subsidiaries are third-party beneficiaries of these Terms and, upon your acceptance, will have the right to enforce these Terms against you."
+    termination:
+        title: '13. Termination'
+        body: 'These Terms remain in effect until terminated. We may suspend or terminate your access to the Services at any time if you breach these Terms. You may terminate these Terms at any time by deleting the applications and ceasing all use of the Services. Sections that by their nature should survive termination shall survive.'
+    changes:
+        title: '14. Changes to These Terms'
+        body: 'We may update these Terms from time to time. Material changes will be indicated by updating the "Last updated" date above, and, where appropriate, notified within the applications. Your continued use of the Services after changes take effect constitutes acceptance of the updated Terms.'
+    law:
+        title: '15. Governing Law and Jurisdiction'
+        body: 'These Terms are governed by the laws of the Republic of Estonia, without prejudice to any mandatory consumer protection provisions of the country in which you reside. Any dispute that cannot be resolved amicably shall be submitted to the competent courts of Tallinn, Estonia, unless mandatory law provides otherwise.'
+    contact:
+        title: '16. Contact'
+        intro: 'For any question regarding these Terms, please contact us at:'
+        company: 'Veylam OÜ'
+        email: 'Email: contact@veylam.eu'
 
 home:
     meta:
-        title: 'Veylam, a holding built for the long term'
-        description: 'Veylam builds and backs durable businesses with patient capital, hands-on operators and a long-term view. Discover the group and get in touch.'
+        title: 'Veylam, unique experiences across the world'
+        description: 'Veylam creates unique experiences across the world: premium products and services designed to be remembered. Discover the group and get in touch.'
     hero:
         eyebrow: 'Holding company'
-        title: 'Durable businesses, built to last'
-        subtitle: 'Veylam brings together a family of companies under one roof. We invest patient capital, back strong operators and think in decades, not quarters.'
+        title: 'We create unique experiences across the world.'
+        subtitle: 'Veylam leads with one standard: premium. In everything we build, we craft products and services designed to be remembered.'

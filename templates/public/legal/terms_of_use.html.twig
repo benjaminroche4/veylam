@@ -1,0 +1,137 @@
+{% extends 'public/base.html.twig' %}
+
+{% block title %}{{ 'terms.meta.title'|trans }}{% endblock %}
+{% block description %}{{ 'terms.meta.description'|trans }}{% endblock %}
+{% block url %}{{ url('app_terms_of_use') }}{% endblock %}
+
+{% block schema_page %}
+    {{ include('_partials/schema/organization.html.twig', {
+        page_type: 'WebPage',
+        page_url: block('url'),
+        page_title: block('title'),
+        page_description: block('description'),
+    }) }}
+{% endblock %}
+
+{% block body %}
+    <section class="relative flex-1 bg-neutral-950 px-6 py-28">
+        <div class="mx-auto max-w-3xl">
+            <h1 class="text-3xl font-semibold text-white">{{ 'terms.title'|trans }}</h1>
+            <p class="mt-3 text-sm text-neutral-500">{{ 'terms.updated'|trans }}</p>
+
+            <div class="mt-12 space-y-12">
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.acceptance.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.acceptance.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.about.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.about.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.license.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.license.body_grant'|trans }}</p>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.license.body_restrictions'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.accounts.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">
+                        {{ 'terms.accounts.body_start'|trans }}
+                        <a href="{{ path('app_privacy_policy') }}" class="text-neutral-200 underline underline-offset-4 transition-colors duration-200 hover:text-white">{{ 'terms.accounts.body_link'|trans }}</a>{{ 'terms.accounts.body_end'|trans }}
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.purchases.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.purchases.intro'|trans }}</p>
+                    <ul class="mt-3 list-disc space-y-2 pl-5 leading-7 text-neutral-400 marker:text-neutral-600">
+                        <li>{{ 'terms.purchases.item_payment'|trans }}</li>
+                        <li>{{ 'terms.purchases.item_renewal'|trans }}</li>
+                        <li>{{ 'terms.purchases.item_manage'|trans }}</li>
+                        <li>{{ 'terms.purchases.item_trial'|trans }}</li>
+                        <li>{{ 'terms.purchases.item_refunds'|trans }}</li>
+                    </ul>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.purchases.outro'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.content.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.content.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.acceptable_use.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.acceptable_use.intro'|trans }}</p>
+                    <ul class="mt-3 list-disc space-y-2 pl-5 leading-7 text-neutral-400 marker:text-neutral-600">
+                        <li>{{ 'terms.acceptable_use.item_law'|trans }}</li>
+                        <li>{{ 'terms.acceptable_use.item_infringe'|trans }}</li>
+                        <li>{{ 'terms.acceptable_use.item_malware'|trans }}</li>
+                        <li>{{ 'terms.acceptable_use.item_interfere'|trans }}</li>
+                        <li>{{ 'terms.acceptable_use.item_fraud'|trans }}</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.intellectual_property.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.intellectual_property.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.third_party.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.third_party.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.warranties.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.warranties.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.liability.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.liability.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.apple.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.apple.intro'|trans }}</p>
+                    <ul class="mt-3 list-disc space-y-2 pl-5 leading-7 text-neutral-400 marker:text-neutral-600">
+                        <li>{{ 'terms.apple.item_parties'|trans }}</li>
+                        <li>{{ 'terms.apple.item_maintenance'|trans }}</li>
+                        <li>{{ 'terms.apple.item_warranty'|trans }}</li>
+                        <li>{{ 'terms.apple.item_claims'|trans }}</li>
+                        <li>{{ 'terms.apple.item_ip'|trans }}</li>
+                        <li>{{ 'terms.apple.item_embargo'|trans }}</li>
+                        <li>{{ 'terms.apple.item_beneficiary'|trans }}</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.termination.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.termination.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.changes.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.changes.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.law.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.law.body'|trans }}</p>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-white">{{ 'terms.contact.title'|trans }}</h2>
+                    <p class="mt-3 leading-7 text-neutral-400">{{ 'terms.contact.intro'|trans }}</p>
+                    <p class="mt-3 leading-7 text-neutral-400">
+                        {{ 'terms.contact.company'|trans }}<br>
+                        {{ 'terms.contact.email'|trans }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

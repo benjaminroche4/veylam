@@ -1,0 +1,23 @@
+framework:
+    rate_limiter:
+        # [o2switch] cache.app is filesystem-backed, no Redis on shared hosting
+        form_contact:
+            policy: sliding_window
+            limit: 5
+            interval: '1 minute'
+            cache_pool: cache.app
+
+when@test:
+    services:
+        # Plain in-memory storage, deliberately not tagged kernel.reset: rate limit
+        # state must survive across requests within a single test (disableReboot)
+        test.rate_limiter.storage:
+            class: Symfony\Component\RateLimiter\Storage\InMemoryStorage
+
+    framework:
+        rate_limiter:
+            form_contact:
+                policy: sliding_window
+                limit: 1000
+                interval: '1 minute'
+                storage_service: test.rate_limiter.storage
